@@ -1,0 +1,27 @@
+<!--index.wxml-->
+<view class="container">
+  <text class='text'>截止2019年3月5日</text>
+  <text class='text'>因为微信开发者工具无法调试RTMP流媒体,所以你需要手机来真机调试</text>
+  <text class='text'>因为需要用到本地搭建的RTMP服务,所以真机调试时请让手机与电脑处在同一个网络.最简单的办法就是让手机电脑在同一个wifi中, 然后获取电脑在该wifi网络中的下ip地址(windows中使用ipconfig命令即可)</text>
+
+<view style='height:20px;'></view>
+  <input id="ipinput" class='input' placeholder='电脑ip地址' bindinput="onIpInput"></input>
+  
+  <text class='text'>电脑同时连接wifi与宽带时候会有多个ip地址, 请填写wifi网络的ip地址</text>
+
+  <button bindtap="start">开始</button>
+
+<view class='block'>
+  <text class='text'>live-pusher:</text>
+  <text class='text'>url: {{pushUrl || "无"}}</text>
+  <live-pusher  mode="RTC" autopush url="{{pushUrl}}" bindstatechange="statechange"></live-pusher>
+</view>
+  
+
+<view class='block'>
+  <text class='text'>live-player </text>
+  <text class='text'>url: {{pullUrl || "无"}}</text>
+  <live-player mode="RTC" autoplay="{{true}}" src="{{pullUrl}}"></live-player>
+</view>
+  
+</view>

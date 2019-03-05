@@ -1,0 +1,15 @@
+.text{
+  font-size:12px;
+  line-height: 20px;
+}
+
+.input{
+  border:1px solid #ccc;
+  padding:5px 10px;
+  box-sizing: border-box;
+}
+live-pusher ,  live-player{
+    margin: 0 5%;
+    width: 90%;
+    height: 225px;
+}

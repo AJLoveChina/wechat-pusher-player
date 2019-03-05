@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RTMP测试页面</title>
+    <script src="https://cdn.bootcss.com/flv.js/1.4.0/flv.min.js"></script>
+</head>
+<body>
+
+<h3>网页使用flv拉取流的demo页面</h3>
+<video id="videoElement" width="400" autoplay controls></video>
+<br>
+<input type="text" value="stream1" id="pullStreamName" placeholder="拉取流的名称">
+<p id="pullStreamNameShow"></p>
+<button onclick="start()">开始拉流</button>
+
+<script>
+
+    function start() {
+        if (flvjs.isSupported()) {
+            var videoElement = document.getElementById('videoElement');
+            let pullStreamName = document.getElementById("pullStreamName").value;
+            let streamUrl = `http://127.0.0.1:8000/live/${pullStreamName}.flv`;
+            document.getElementById("pullStreamNameShow").innerHTML = streamUrl;
+            (() => {
+                var flvPlayer = flvjs.createPlayer({
+                    type: 'flv',
+                    url: streamUrl
+                });
+                flvPlayer.attachMediaElement(videoElement);
+                flvPlayer.load();
+                flvPlayer.play();
+            })();
+
+        }
+    }
+
+</script>
+
+</body>
+</html>

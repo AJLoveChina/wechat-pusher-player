@@ -12,6 +12,7 @@
   <button bindtap="start">开始</button>
 
 <view class='block'>
+  <input class='input' placeholder='推流名称' value='{{pushStreamName}}' bindinput='updatePushStreamName'></input>
   <text class='text'>live-pusher:</text>
   <text class='text'>url: {{pushUrl || "无"}}</text>
   <live-pusher  mode="RTC" autopush url="{{pushUrl}}" bindstatechange="statechange"></live-pusher>
@@ -19,6 +20,7 @@
   
 
 <view class='block'>
+  <input class='input' placeholder='播放流名称' value='{{pullStreamName}}' bindinput='updatePullStreamName'></input>
   <text class='text'>live-player </text>
   <text class='text'>url: {{pullUrl || "无"}}</text>
   <live-player mode="RTC" autoplay="{{true}}" src="{{pullUrl}}"></live-player>

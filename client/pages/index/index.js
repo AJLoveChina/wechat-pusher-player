@@ -8,7 +8,9 @@ Page({
   data: {
     pushUrl: "",
     pullUrl: "",
-    ip: ""
+    ip: "",
+    pullStreamName: "stream1",
+    pushStreamName: "stream1",
   },
   onIpInput(e){
     this.setData({
@@ -17,9 +19,19 @@ Page({
   },
   start: function() {
     this.setData({
-      pushUrl: `rtmp://${this.data.ip}:1935/live/stream1`,
-      pullUrl: `rtmp://${this.data.ip}:1935/live/stream1`
+      pushUrl: `rtmp://${this.data.ip}:1935/live/${this.data.pushStreamName}`,
+      pullUrl: `rtmp://${this.data.ip}:1935/live/${this.data.pullStreamName}`
     })
+  },
+  updatePushStreamName(e) {
+    this.setData({
+      pushStreamName: e.detail.value
+    });
+  },
+  updatePullStreamName(e) {
+    this.setData({
+      pullStreamName: e.detail.value
+    });
   },
   statechange(e) {
     console.log('live-pusher code:', wechatMediaStatusCode[`${e.detail.code}`], e.detail.code)

@@ -5,8 +5,9 @@
 
 .input{
   border:1px solid #ccc;
-  padding:5px 10px;
+  padding:0 10px;
   box-sizing: border-box;
+  font-size:12px;
 }
 live-pusher ,  live-player{
     margin: 0 5%;

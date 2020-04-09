@@ -1,10 +1,19 @@
-## 微信小程序live-pusher/live-player使用示例
+# 微信小程序live-pusher/live-player使用示例
 
 本仓库包括的内容
 * 使用开源组件搭建本地的RTMP服务给小程序使用
 * 小程序live-pusher/live-player如何使用
 * 使用网页播放小程序推的视频流
 * 关于腾讯云实时流媒体服务
+
+## 本栗子使用流程图
+<img src="../assets/liu-chen-tu.jpg"/>
+
+## 文件夹说明
+* assets - 截图目录
+* client - 微信小程序源代码, 微信开发者工具打开这个文件夹
+* Node-Media-Server - 本地的RTMP服务 (支持RTMP,FLV)
+* web-client - 网页访问本地的RTMP服务, 在网页播放RTMP推送的视频流(flv格式播放)
 
 
 ## 开源组件搭建本地的RTMP服务

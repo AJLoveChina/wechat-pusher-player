@@ -7,7 +7,7 @@
 * 关于腾讯云实时流媒体服务
 
 ## 本栗子使用流程图
-<img src="../assets/liu-chen-tu.jpg"/>
+<img src="./assets/liu-chen-tu.jpg"/>
 
 ## 文件夹说明
 * assets - 截图目录
